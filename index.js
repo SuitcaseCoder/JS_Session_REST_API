@@ -11,7 +11,12 @@ const port = 3000
 //'get' says: we're going to define this as a GET http request
 app.get('/', (req, res) => res.send('Hello World!'))
 app.get('/Pizza', (req, res) => res.send('Welcome to Pizza. Today\'s flavor is raclette pizza'))
-
+app.get('/birthdaycard/:username', (req,res) => {
+    let name = req.params.username;
+    let hasConfetti = req.query.confetti === 'true';
+    let confetti = hasConfetti ? '    &$*%(#$%*($#%@($^&@(#$%(#*$(&%@(^' : '';
+    res.send(`Happy birthday ${name}! ${confetti}`);
+});
 
 // tells app to listen on this port and make this callback function when server is up and running
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))
