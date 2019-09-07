@@ -10,6 +10,7 @@ const port = 3000
 // that lamda takes two arguments , and a message to send back when message is invoked
 //'get' says: we're going to define this as a GET http request
 app.get('/', (req, res) => res.send('Hello World!'))
+app.get('/Pizza', (req, res) => res.send('Welcome to Pizza. Today\'s flavor is raclette pizza'))
 
 
 // tells app to listen on this port and make this callback function when server is up and running
